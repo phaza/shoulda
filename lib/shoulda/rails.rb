@@ -10,8 +10,6 @@ require 'shoulda/action_mailer'     if defined? ActionMailer::Base
 # Load in the 3rd party macros from vendorized plugins and gems
 module Shoulda
   class Railtie < Rails::Railtie
-    railtie_name :shoulda
-
     initializer "shoulda.autoload_macros" do |app|
       Shoulda.autoload_macros Rails.root, File.join("vendor", "{plugins,gems}", "*")
     end
